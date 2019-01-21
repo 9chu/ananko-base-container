@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 WORKDIR /root
 
 RUN apt update && apt install -y git python3 python3-pip net-tools iputils-ping locales
-RUN python3 -m pip install aiomysql aiohttp protobuf qqwry-py3 wolframalpha lxml numpy jieba pyxdameraulevenshtein cssselect
+RUN python3 -m pip install aiomysql aiohttp protobuf qqwry-py3 wolframalpha lxml numpy jieba cssselect
+RUN python3 -m pip install pyxdameraulevenshtein
 
 RUN git clone https://github.com/openjudge/sandbox
 RUN cd /root/sandbox/libsandbox && ./configure && make install && ln -s /usr/local/lib/libsandbox.so /lib/libsandbox.so
